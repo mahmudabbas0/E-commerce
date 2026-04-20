@@ -1,6 +1,5 @@
 <?php
-namespace app\services\Auth;
-
+namespace App\Services\Auth;
 
 use App\Repositories\Auth\AuthRepository;
 use Illuminate\Support\Facades\Auth;

@@ -1,0 +1,31 @@
+<?php
+
+return [
+
+    'home' => 'الرئيسية',
+    'roles' => 'الأدوار',
+    'permissions' => 'الصلاحيات',
+    'users' => 'المستخدمين',
+    'welcome' => 'مرحبا بك في لوحة التحكم',
+    'create-role' => 'إنشاء دور جديد',
+    'edit-role' => 'تعديل الدور',
+    'role-name' => 'اسم الدور',
+    'permissions-list' => 'قائمة الصلاحيات',
+    'roles-list' => 'قائمة الأدوار',
+    'actions' => 'العمليات',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'no-data' => 'لا توجد بيانات للعرض',
+    'cancel' => 'إلغاء',
+    'save' => 'حفظ',
+    'save_changes' => 'حفظ التغييرات',
+    'basic-info' => 'المعلومات الأساسية',
+    'added-successfully' => 'تمت الإضافة بنجاح',
+    'updated-successfully' => 'تم التحديث بنجاح',
+    'deleted-successfully' => 'تم الحذف بنجاح',
+    'confirm-delete' => 'تأكيد الحذف',
+    'delete-msg' => 'هل أنت متأكد من رغبتك في حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.',
+    'confirm' => 'تأكيد الحذف',
+    'something-went-wrong' => 'حدث خطأ ما، يرجى المحاولة مرة أخرى لاحقاً',
+    'role-has-users-error' => 'لا يمكن حذف دور مرتبط بمديرين.',
+];

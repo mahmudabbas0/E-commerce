@@ -1,0 +1,31 @@
+<?php
+
+return [
+
+    'home' => 'Home',
+    'roles' => 'Roles',
+    'permissions' => 'Permissions',
+    'users' => 'Users',
+    'welcome' => 'Welcome to the dashboard',
+    'create-role' => 'Create a role',
+    'edit-role' => 'Edit role',
+    'role-name' => 'Role name',
+    'permissions-list' => 'Permissions',
+    'roles-list' => 'Roles list',
+    'actions' => 'Actions',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'no-data' => 'No data found',
+    'cancel' => 'Cancel',
+    'save' => 'Save',
+    'save_changes' => 'Save Changes',
+    'basic-info' => 'Basic Information',
+    'added-successfully' => 'Added successfully',
+    'updated-successfully' => 'Updated successfully',
+    'deleted-successfully' => 'Deleted successfully',
+    'confirm-delete' => 'Confirm Delete',
+    'delete-msg' => 'Are you sure you want to delete this item? This action cannot be undone.',
+    'confirm' => 'Confirm',
+    'something-went-wrong' => 'Something went wrong, please try again later',
+    'role-has-users-error' => 'Cannot delete role with assigned admins.',
+];

@@ -198,6 +198,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'Name',
+        'email' => 'Email',
+        'password' => 'Password',
+        'password_confirmation' => 'Password Confirmation',
+        'permissions' => 'Permissions',
+        'role.ar' => 'arabic name name',
+        'role.en' => 'english name name',
+    ],
 
 ];

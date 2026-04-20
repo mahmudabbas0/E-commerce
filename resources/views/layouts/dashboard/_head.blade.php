@@ -14,9 +14,7 @@
 <!-- BEGIN VENDOR CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/weather-icons/climacons.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/fonts/meteocons/style.css">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/morris.css">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/chartist.css">
-<link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/chartist-plugin-tooltip.css">
+@stack('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/fonts/simple-line-icons/style.css">
 
 @if(config('app.locale') == "ar")
@@ -37,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css-rtl/pages/dashboard-ecommerce.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href={{asset('assets/dashboard')}}/css/style-rtl.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css/style-rtl.css">
     <!-- END Custom CSS-->
 
 @else
@@ -58,6 +56,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css/pages/dashboard-ecommerce.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href={{asset('assets/dashboard')}}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css/style.css">
     <!-- END Custom CSS-->
 @endif

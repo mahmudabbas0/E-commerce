@@ -50,6 +50,8 @@ class ForgotPasswordController extends Controller
             return redirect()->back()->withErrors(['error' => __('auth.invalid_otp')]);
         }
 
+        session()->put('verified_otp_email', $request->email);
+
         return redirect()->route('dashboard.password.reset', ['email' => $request->email]);
     }
 

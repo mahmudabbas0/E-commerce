@@ -3,6 +3,12 @@
 
 @section('title', 'Dashboard')
 
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/morris.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/chartist.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/charts/chartist-plugin-tooltip.css">
+@endpush
+
 
 @section('content')
     <div class="app-content content">
@@ -804,3 +810,12 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{asset('assets/dashboard')}}/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+    <script src="{{asset('assets/dashboard')}}/vendors/js/charts/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
+    <script src="{{asset('assets/dashboard')}}/vendors/js/charts/raphael-min.js" type="text/javascript"></script>
+    <script src="{{asset('assets/dashboard')}}/vendors/js/charts/morris.min.js" type="text/javascript"></script>
+    <script src="{{asset('assets/dashboard')}}/vendors/js/timeline/horizontal-timeline.js" type="text/javascript"></script>
+    <script src="{{asset('assets/dashboard')}}/js/scripts/pages/dashboard-ecommerce.js" type="text/javascript"></script>
+@endpush

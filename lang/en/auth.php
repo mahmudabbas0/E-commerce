@@ -38,4 +38,5 @@ return [
     'otp_sent' => 'OTP sent to your email.',
     'invalid_otp' => 'Invalid OTP.',
     'password_reset_success' => 'Password reset successfully. You can now log in with your new password.',
+    'invalid_otp_session' => 'Session expired or unauthorized request. Please request a new OTP.',
 ];

@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'categories',
+    'brands',
+    'coupons',
+    'products',
+    'orders',
+    'users',
+    'roles',
+    'settings',
+    'reports',
+    'dashboard',
+    'profile',
+    'home',
+    'contact',
+    'about',
+    'blog',
+    'newsLetters',
+    'banners',
+    'sliders',
+    'pages',
+    'faqs',
+    'comments',
+    'socials',
+    'menus',
+];

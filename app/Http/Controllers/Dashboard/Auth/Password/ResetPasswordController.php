@@ -16,6 +16,9 @@ class ResetPasswordController extends Controller
         $this->PasswordService = $passwordService;
     }
     public function showResetForm($email){
+        if (session('verified_otp_email') !== $email) {
+            return redirect()->route('dashboard.login')->withErrors(['email' => __('auth.invalid_otp_session')]);
+        }
         return view('dashboard.auth.password.reset', compact('email'));
     }
 
@@ -23,10 +26,17 @@ class ResetPasswordController extends Controller
 
         $request->validated();
 
-           $admin = $this->PasswordService->resetPassword($request->email, $request->password);
-            if (!$admin) {
-                return back()->withErrors(['email' => __('auth.email_not_found')]);
-            }
-            return redirect()->route('dashboard.login')->with('status', __('auth.password_reset_success'));
+        if (session('verified_otp_email') !== $request->email) {
+            return redirect()->route('dashboard.login')->withErrors(['email' => __('auth.invalid_otp_session')]);
+        }
+
+        $admin = $this->PasswordService->resetPassword($request->email, $request->password);
+        if (!$admin) {
+            return back()->withErrors(['email' => __('auth.email_not_found')]);
+        }
+        
+        session()->forget('verified_otp_email');
+        
+        return redirect()->route('dashboard.login')->with('status', __('auth.password_reset_success'));
     }
 }
