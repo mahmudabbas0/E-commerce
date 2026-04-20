@@ -28,4 +28,17 @@ return [
     'confirm' => 'Confirm',
     'something-went-wrong' => 'Something went wrong, please try again later',
     'role-has-users-error' => 'Cannot delete role with assigned admins.',
+    
+    // Admins section
+    'admins' => 'Admins',
+    'create-admin' => 'Create Admin',
+    'edit-admin' => 'Edit Admin',
+    'admins-list' => 'Admins List',
+    'name' => 'Name',
+    'email' => 'Email',
+    'password' => 'Password',
+    'status' => 'Status',
+    'role' => 'Role',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
 ];

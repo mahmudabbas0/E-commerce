@@ -28,4 +28,17 @@ return [
     'confirm' => 'تأكيد الحذف',
     'something-went-wrong' => 'حدث خطأ ما، يرجى المحاولة مرة أخرى لاحقاً',
     'role-has-users-error' => 'لا يمكن حذف دور مرتبط بمديرين.',
+    
+    // Admins section
+    'admins' => 'المديرين',
+    'create-admin' => 'إنشاء مدير',
+    'edit-admin' => 'تعديل مدير',
+    'admins-list' => 'قائمة المديرين',
+    'name' => 'الاسم',
+    'email' => 'البريد الإلكتروني',
+    'password' => 'كلمة المرور',
+    'status' => 'الحالة',
+    'role' => 'الدور',
+    'active' => 'مفعل',
+    'inactive' => 'غير مفعل',
 ];

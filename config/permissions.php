@@ -6,6 +6,7 @@ return [
     'coupons',
     'products',
     'orders',
+    'admins',
     'users',
     'roles',
     'settings',
