@@ -10,7 +10,16 @@ class Country extends Model
 {
     use HasTranslations;
     public $translatable = ['name'];
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'phone_code', 'code', 'is_active'];
 
     public $timestamps = false;
+
+    public function governorates()
+    {
+        return $this->hasMany(Governorate::class, 'country_id');
+    }
+
+    public function users(){
+        return $this->hasMany(User::class, 'country_id');
+    }
 }

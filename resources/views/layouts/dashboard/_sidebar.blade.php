@@ -27,6 +27,14 @@
                     </ul>
                 </li>
             @endcan
+            @can('settings')
+                <li class=" nav-item"><a href="#"><i class="la la-gear"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.settings')}}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.countries')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.countries')}}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
             <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
                                                                         data-placement="right" data-original-title="Layouts"></i>

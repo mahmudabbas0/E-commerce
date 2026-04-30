@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\Auth\Password\ForgotPasswordController;
 use App\Http\Controllers\Dashboard\Auth\Password\ResetPasswordController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
+use App\Http\Controllers\Dashboard\WorldController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -64,8 +65,18 @@ Route::group(
             Route::get('admins/{id}/status', [AdminController::class, 'changeStatus'])->name('admins.status');
         });
 
-    });
+        #################### World Routes #################
+        Route::group(['middleware' => 'can:settings'], function () {
+            Route::get('/countries', [WorldController::class, 'getAllCountries'])->name('countries');
+            Route::get('/countries/{id}/status', [WorldController::class, 'changeStatus'])->name('countries.status');
+            Route::get('/governorates/{id}/status', [WorldController::class, 'changeGovernorateStatus'])->name('governorates.status');
+            Route::get('/governorates/{id}', [WorldController::class, 'getAllGovernorates'])->name('governorates');
+            Route::get('/cities/{id}', [WorldController::class, 'getAllCities'])->name('cities');
 
+            Route::post('/shipping-charges/update', [WorldController::class, 'updateSingleShippingCharge'])->name('shipping-charges.update-single');
+        });
+
+    });
 });
 
 
