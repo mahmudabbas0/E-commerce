@@ -1,6 +1,6 @@
 /*=========================================================================================
-    File Name: datatable-api.js
-    Description: API Datatable 
+    File Name: datatables-api.js
+    Description: API Datatable
     ----------------------------------------------------------------------------------------
     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
     Version: 1.0
@@ -67,7 +67,7 @@ tableSearching.columns().every( function () {
 *       js of Individual column searching (select inputs)        *
 *****************************************************************/
 
-$('.datatable-select-inputs').DataTable( {
+$('.datatables-select-inputs').DataTable( {
     initComplete: function () {
         this.api().columns().every( function () {
             var column = this;

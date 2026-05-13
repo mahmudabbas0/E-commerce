@@ -20,9 +20,29 @@
                 </li>
             @endcan
             @can('admins')
-                <li class=" nav-item"><a href="#"><i class="la la-users"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.users')}}</span></a>
+                <li class=" nav-item"><a href="#"><i class="la la-users"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.users')}}</span> <span class="badge badge badge-info badge-pill float-right mr-2">{{ $admins_count }}</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="{{route('dashboard.admins.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.admins')}}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+            @can('categories')
+                <li class=" nav-item"><a href="#"><i class="la la-tags"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.categories')}}</span> <span class="badge badge badge-info badge-pill float-right mr-2">{{ $categories_count }}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.categories.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.all_categories')}}</a>
+                        </li>
+                        <li><a class="menu-item" href="{{route('dashboard.categories.create')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.add_category')}}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+            @can('brands')
+                <li class=" nav-item"><a href="#"><i class="la la-certificate"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.brands')}}</span> <span class="badge badge badge-info badge-pill float-right mr-2">{{ $brands_count }}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.brands.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.all_brands')}}</a>
+                        </li>
+                        <li><a class="menu-item" href="{{route('dashboard.brands.create')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.add_brand')}}</a>
                         </li>
                     </ul>
                 </li>

@@ -1,5 +1,5 @@
 /*=========================================================================================
-    File Name: datatable-foundation.js
+    File Name: datatables-foundation.js
     Description: Foundation Datatable
     ----------------------------------------------------------------------------------------
     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template

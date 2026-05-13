@@ -104,7 +104,7 @@ $(document).ready(function() {
         colReorder: true
     });
 
-    // Resize datatable on menu width change and window resize
+    // Resize datatables on menu width change and window resize
     $(function () {
 
         $(".menu-toggle").on('click', resize);

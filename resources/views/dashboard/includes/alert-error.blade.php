@@ -1,11 +1,15 @@
 @if (session('error'))
     <div class="alert alert-danger mb-2" role="alert">
-        {{ session('error') }}
+        <i class="ft-alert-circle mr-1"></i> {{ session('error') }}
     </div>
 @endif
 
-@if ($errors->has('error'))
+@if ($errors->any())
     <div class="alert alert-danger mb-2" role="alert">
-        {{ $errors->first('error') }}
+        <ul class="mb-0 list-unstyled">
+            @foreach ($errors->all() as $error)
+                <li><i class="ft-alert-circle mr-1"></i> {{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif

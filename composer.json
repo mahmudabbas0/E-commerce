@@ -11,11 +11,15 @@
     "require": {
         "php": "^8.4",
         "anhskohbo/no-captcha": "^3.7",
+        "codezero/laravel-unique-translation": "^4.3",
+        "cviebrock/eloquent-sluggable": "^13.0",
         "ichtrojan/laravel-otp": "^2.0",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
         "mcamara/laravel-localization": "^2.3",
-        "spatie/laravel-translatable": "^6.13"
+        "predis/predis": "^3.4",
+        "spatie/laravel-translatable": "^6.13",
+        "yajra/laravel-datatables": "13.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

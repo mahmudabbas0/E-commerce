@@ -110,7 +110,7 @@
 </div>
 @endsection
 
-@push('styles')
+@push('css')
 <style>
     .form-section { border-bottom: 1px solid #d1d4d7; padding-bottom: 10px; margin-bottom: 20px; font-weight: 700; color: #1e9ff2; }
     .form-actions { border-top: 1px solid #d1d4d7; padding-top: 20px; margin-top: 20px; }

@@ -1,0 +1,121 @@
+@import url("https://cdn.datatables.net/2.3.8/css/dataTables.bootstrap5.min.css");
+@import url("https://cdn.datatables.net/buttons/3.2.6/css/buttons.bootstrap5.min.css");
+@import url("https://cdn.datatables.net/responsive/3.0.8/css/responsive.bootstrap5.min.css");
+@import url("https://cdn.datatables.net/colreorder/2.1.2/css/colReorder.dataTables.min.css");
+@import url("https://cdn.datatables.net/select/3.1.3/css/select.dataTables.min.css");
+
+/* Reverted to Modern Admin Style */
+.dt-buttons.btn-group, .dt-buttons {
+    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap;
+}
+
+[data-textdirection="rtl"] .dt-buttons {
+    flex-direction: row-reverse !important;
+}
+
+.dt-buttons .btn {
+    border-radius: 5px !important;
+    border: 1px solid #1e9ff2 !important;
+    background-color: transparent !important;
+    color: #1e9ff2 !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 500;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none !important;
+}
+
+.dt-buttons .btn:hover {
+    background-color: #1e9ff2 !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(30, 159, 242, 0.2) !important;
+}
+
+.dt-buttons .btn i {
+    font-size: 1rem;
+}
+
+/* Dropdown Styling */
+div.dt-button-collection {
+    width: 240px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    padding: 10px 0 !important;
+    border: 1px solid #eef0f2 !important;
+    margin-top: 8px !important;
+    z-index: 2100 !important;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+[data-textdirection="rtl"] div.dt-button-collection {
+    right: 0 !important;
+    left: auto !important;
+}
+
+button.dt-button.buttons-columnVisibility {
+    background: transparent !important;
+    color: #495057 !important;
+    padding: 10px 20px !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    text-align: inherit !important;
+    font-size: 0.9rem !important;
+    transition: 0.2s;
+}
+
+[data-textdirection="rtl"] button.dt-button.buttons-columnVisibility {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+button.dt-button.buttons-columnVisibility:hover {
+    background-color: #f8f9fa !important;
+    color: #1e9ff2 !important;
+}
+
+button.dt-button.buttons-columnVisibility.active {
+    background-color: rgba(30, 159, 242, 0.08) !important;
+    color: #1e9ff2 !important;
+    font-weight: 600;
+}
+
+button.dt-button.buttons-columnVisibility::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    margin-left: 12px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+[data-textdirection="rtl"] button.dt-button.buttons-columnVisibility::before {
+    margin-left: 0;
+    margin-right: 12px;
+}
+
+button.dt-button.buttons-columnVisibility.active::before {
+    background-color: #1e9ff2;
+    border-color: #1e9ff2;
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+}

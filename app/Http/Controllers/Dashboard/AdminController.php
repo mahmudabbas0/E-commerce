@@ -44,12 +44,17 @@ class AdminController extends Controller
      */
     public function store(AdminRequest $request)
     {
-        $data = $request->only(['name', 'email', 'password', 'status', 'role_id']);
-        $admin = $this->adminService->storeAdmin($data);
-        if (!$admin) {
-            return redirect()->back()->with('error', __('dashboard.something-went-wrong'));
+        try {
+            $data = $request->only(['name', 'email', 'password', 'status', 'role_id']);
+            $admin = $this->adminService->storeAdmin($data);
+            
+            if (!$admin) {
+                return redirect()->back()->with('error', __('dashboard.something-went-wrong'))->withInput();
+            }
+            return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.added-successfully'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', __('dashboard.something-went-wrong'))->withInput();
         }
-        return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.added-successfully'));
     }
 
     /**
@@ -82,16 +87,20 @@ class AdminController extends Controller
      */
     public function update(AdminRequest $request, string $id)
     {
-        $data = $request->only(['name', 'email', 'status', 'role_id']);
-        if ($request->filled('password')) {
-            $data['password'] = $request->password;
-        }
+        try {
+            $data = $request->only(['name', 'email', 'status', 'role_id']);
+            if ($request->filled('password')) {
+                $data['password'] = $request->password;
+            }
 
-        if (!$this->adminService->updateAdmin($data, $id)) {
-            return redirect()->back()->with('error', __('dashboard.something-went-wrong'));
-        }
+            if (!$this->adminService->updateAdmin($data, $id)) {
+                return redirect()->back()->with('error', __('dashboard.something-went-wrong'))->withInput();
+            }
 
-        return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.updated-successfully'));
+            return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.updated-successfully'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', __('dashboard.something-went-wrong'))->withInput();
+        }
     }
 
     /**
@@ -99,12 +108,15 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        $admin = $this->adminService->destroyAdmin($id);
-        if (!$admin) {
+        try {
+            $admin = $this->adminService->destroyAdmin($id);
+            if (!$admin) {
+                return redirect()->route('dashboard.admins.index')->with('error', __('dashboard.something-went-wrong'));
+            }
+            return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.deleted-successfully'));
+        } catch (\Exception $e) {
             return redirect()->route('dashboard.admins.index')->with('error', __('dashboard.something-went-wrong'));
         }
-
-        return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.deleted-successfully'));
     }
 
     public function changeStatus(string $id)

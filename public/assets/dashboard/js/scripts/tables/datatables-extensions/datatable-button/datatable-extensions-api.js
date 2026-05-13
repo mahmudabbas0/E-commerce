@@ -1,5 +1,5 @@
 /*=========================================================================================
-    File Name:datatable-extensions-api.js
+    File Name:datatables-extensions-api.js
     Description: Api Datatables.
     ----------------------------------------------------------------------------------------
     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template

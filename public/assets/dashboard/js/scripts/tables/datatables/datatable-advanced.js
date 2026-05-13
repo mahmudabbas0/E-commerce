@@ -1,6 +1,6 @@
 /*=========================================================================================
-    File Name: datatable-advanced.js
-    Description: Advanced Datatable 
+    File Name: datatables-advanced.js
+    Description: Advanced Datatable
     ----------------------------------------------------------------------------------------
     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
     Version: 1.0

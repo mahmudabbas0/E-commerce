@@ -5,6 +5,7 @@ namespace App\Services\Dashboard;
 use App\Repositories\Dashboard\AdminRepository;
 use App\Repositories\Dashboard\RoleRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class AdminService
 {
@@ -32,7 +33,9 @@ class AdminService
 
     public function storeAdmin($data){
 
-      return  $this->adminRepository->storeAdmin($data);
+      $admin= $this->adminRepository->storeAdmin($data);
+      Cache::forget('admins_count');
+      return $admin;
 
     }
 
@@ -55,6 +58,7 @@ class AdminService
             return abort(404);
         }
         $admin = $this->adminRepository->destroyAdmin($admin);
+        Cache::forget('admins_count');
         return $admin;
 
     }

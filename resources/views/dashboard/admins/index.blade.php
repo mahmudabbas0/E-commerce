@@ -19,8 +19,8 @@
             </div>
             <div class="content-header-right col-md-6 col-12">
                 <div class="btn-group float-md-right">
-                    <a href="{{ route('dashboard.admins.create') }}" class="btn btn-primary round btn-glow px-2 d-inline-flex align-items-center justify-content-center">
-                        <i class="la la-plus-circle font-medium-3 mr-1"></i> <span>{{ __('dashboard.create-admin') }}</span>
+                    <a href="{{ route('dashboard.admins.create') }}" class="btn btn-info round box-shadow-2 px-2">
+                        <i class="ft-plus icon-left"></i> {{ __('dashboard.create-admin') }}
                     </a>
                 </div>
             </div>
@@ -75,17 +75,14 @@
                                                             @endif
                                                         </td>
                                                         <td class="text-center">
-                                                            <div class="d-flex justify-content-center">
-                                                                <a href="{{ route('dashboard.admins.edit', $admin->id) }}" class="btn btn-outline-primary btn-sm round mr-1" data-toggle="tooltip" title="{{ __('dashboard.edit') }}">
-                                                                    <i class="la la-edit"></i>
-                                                                </a>
-                                                                <form action="{{ route('dashboard.admins.destroy', $admin->id) }}" method="POST" style="display: inline-block;">
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit" class="btn btn-outline-danger btn-sm round delete-confirm" data-toggle="tooltip" title="{{ __('dashboard.delete') }}">
-                                                                        <i class="la la-trash"></i>
-                                                                    </button>
-                                                                </form>
+                                                            <div class="btn-group" role="group">
+                                                                <a href="{{ route('dashboard.admins.edit', $admin->id) }}" class="btn btn-outline-primary btn-sm"><i class="ft-edit"></i></a>
+                                                                <button type="button" class="btn btn-outline-danger btn-sm" 
+                                                                        data-toggle="modal" 
+                                                                        data-target="#deleteModal" 
+                                                                        data-action="{{ route('dashboard.admins.destroy', $admin->id) }}">
+                                                                    <i class="ft-trash-2"></i>
+                                                                </button>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -106,16 +103,5 @@
         </div>
     </div>
 </div>
-@endsection
-
 @include('dashboard.includes.delete-confirm')
-
-@push('styles')
-<style>
-    .card-title { font-weight: 700 !important; }
-    .table thead th { border-bottom: 2px solid #E3EBF3; vertical-align: middle; }
-    .table td { vertical-align: middle; }
-    .badge { font-weight: 500; font-size: 85%; }
-    .btn-group .btn { padding: 0.45rem 0.7rem; }
-</style>
-@endpush
+@endsection

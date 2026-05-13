@@ -4,7 +4,7 @@
 <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
 <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
 <meta name="author" content="PIXINVENT">
-<title>Dashboard"|"@yield('title')</title>
+<title>@yield('title')</title>
 <link rel="apple-touch-icon" href="{{asset('assets/dashboard')}}/images/ico/apple-icon-120.png">
 <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard')}}/images/ico/favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
@@ -14,13 +14,21 @@
 <!-- BEGIN VENDOR CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/vendors/css/weather-icons/climacons.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/fonts/meteocons/style.css">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/fileinput/css/fileinput.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/fileinput/themes/fa5/theme.min.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css" crossorigin="anonymous">
+
+<!-- alternatively you can use the font awesome icon library if using with `fas` theme (or Bootstrap 4.x) by uncommenting below. -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
+
+
+
 @stack('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/fonts/simple-line-icons/style.css">
 
 @if(config('app.locale') == "ar")
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css-rtl/vendors.css">
-
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css-rtl/app.css">

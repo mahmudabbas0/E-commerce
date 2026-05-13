@@ -41,40 +41,64 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
         ],
-
-        's3' => [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+        'brands' => [
+            'driver' => 'local',
+            'root' => public_path('/uploads/brands'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/uploads/brands',
+            'visibility' => 'public',
             'throw' => false,
             'report' => false,
         ],
+        'products' => [
+            'driver' => 'local',
+            'root' => public_path('/uploads/products'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/uploads/products',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+         'users' => [
+                'driver' => 'local',
+                'root' => public_path('/uploads/users'),
+                'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/uploads/users',
+                'visibility' => 'public',
+                'throw' => false,
+                'report' => false,
+            ],
 
-    ],
+                's3' => [
+                    'driver' => 's3',
+                    'key' => env('AWS_ACCESS_KEY_ID'),
+                    'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                    'region' => env('AWS_DEFAULT_REGION'),
+                    'bucket' => env('AWS_BUCKET'),
+                    'url' => env('AWS_URL'),
+                    'endpoint' => env('AWS_ENDPOINT'),
+                    'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+                    'throw' => false,
+                    'report' => false,
+                ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Symbolic Links
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the symbolic links that will be created when the
-    | `storage:link` Artisan command is executed. The array keys should be
-    | the locations of the links and the values should be their targets.
-    |
-    */
+            ],
 
-    'links' => [
-        public_path('storage') => storage_path('app/public'),
-    ],
+            /*
+            |--------------------------------------------------------------------------
+            | Symbolic Links
+            |--------------------------------------------------------------------------
+            |
+            | Here you may configure the symbolic links that will be created when the
+            | `storage:link` Artisan command is executed. The array keys should be
+            | the locations of the links and the values should be their targets.
+            |
+            */
 
-];
+            'links' => [
+                public_path('storage') => storage_path('app/public'),
+            ],
+
+        ];

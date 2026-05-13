@@ -162,6 +162,7 @@ return [
     'timezone' => 'The :attribute field must be a valid timezone.',
     'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
+    'uploaded_logo_size' => 'Logo failed to upload, the file might be larger than the server allows.',
     'uppercase' => 'The :attribute field must be uppercase.',
     'url' => 'The :attribute field must be a valid URL.',
     'ulid' => 'The :attribute field must be a valid ULID.',
@@ -206,6 +207,10 @@ return [
         'permissions' => 'Permissions',
         'role.ar' => 'arabic name name',
         'role.en' => 'english name name',
+        'logo' => 'Brand Logo',
+        'status' => 'Status',
+        'name.ar' => 'Arabic Name',
+        'name.en' => 'English Name',
     ],
 
 ];
