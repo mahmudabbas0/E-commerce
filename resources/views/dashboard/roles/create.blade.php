@@ -48,13 +48,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group border-bottom-0">
                                                         <label for="role_en">{{ __('dashboard.role-name') }} (EN)</label>
-                                                        <input type="text" id="role_en" class="form-control" name="role[en]" value="{{ old('role.en') }}" placeholder="e.g. Administrator">
+                                                        <input type="text" id="role_en" class="form-control" name="role[en]" value="{{ old('role.en') }}" placeholder="{{ __('dashboard.role_name_en_placeholder') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group border-bottom-0">
                                                         <label for="role_ar">{{ __('dashboard.role-name') }} (AR)</label>
-                                                        <input type="text" id="role_ar" class="form-control" name="role[ar]" value="{{ old('role.ar') }}" placeholder="مثال: مسؤول">
+                                                        <input type="text" id="role_ar" class="form-control" name="role[ar]" value="{{ old('role.ar') }}" placeholder="{{ __('dashboard.role_name_ar_placeholder') }}">
                                                     </div>
                                                 </div>
                                             </div>

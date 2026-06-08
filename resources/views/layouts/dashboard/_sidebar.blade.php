@@ -47,6 +47,16 @@
                     </ul>
                 </li>
             @endcan
+            @can('coupons')
+                <li class=" nav-item"><a href="#"><i class="la la-ticket"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.coupons')}}</span> <span class="badge badge badge-info badge-pill float-right mr-2">{{ $coupon_count }}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.coupons.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.all_coupons')}}</a>
+                        </li>
+                        <li><a class="menu-item" href="{{route('dashboard.coupons.create')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.add_coupon')}}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
             @can('settings')
                 <li class=" nav-item"><a href="#"><i class="la la-gear"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.settings')}}</span></a>
                     <ul class="menu-content">

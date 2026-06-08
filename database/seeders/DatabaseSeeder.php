@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             CategoriesSeeder::class,
             BrandSeeder::class,
+            CouponSeeder::class,
         ]);
 
     }

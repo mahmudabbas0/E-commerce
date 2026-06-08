@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Coupon Stylesheet - Isolated CSS (Optimized for side-by-side layout)
+   ========================================================================== */
+
+/* 1. Listings Table & Badges */
+.coupon-badge {
+    font-family: 'Outfit', 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    border: 1px dashed #b2c0d6;
+    color: #2c3e50;
+}
+.discount-highlight {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e9ff2;
+}
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.status-active {
+    background-color: #28d094;
+    box-shadow: 0 0 8px rgba(40, 208, 148, 0.6);
+}
+.status-inactive {
+    background-color: #ff4961;
+    box-shadow: 0 0 8px rgba(255, 73, 97, 0.6);
+}
+
+/* 2. Interactive Coupon Preview Widget (Create & Edit Views) */
+.coupon-preview-container {
+    perspective: 1000px;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+.coupon-ticket {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.25);
+    font-family: 'Outfit', 'Inter', 'Segoe UI', sans-serif;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.coupon-ticket:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.35);
+}
+/* Side cutouts to look like a physical ticket */
+.coupon-ticket::before,
+.coupon-ticket::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff; /* Matches card background */
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.coupon-ticket::before {
+    left: -10px;
+}
+.coupon-ticket::after {
+    right: -10px;
+}
+/* Dashed ticket separator */
+.coupon-divider {
+    border-left: 2px dashed rgba(255, 255, 255, 0.3);
+    height: 100%;
+    position: absolute;
+    left: 68%;
+    top: 0;
+}
+.coupon-main-content {
+    width: 63%;
+    float: left;
+}
+.coupon-side-content {
+    width: 27%;
+    float: right;
+    text-align: center;
+    padding-top: 5px;
+}
+.coupon-preview-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+.coupon-preview-code {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    word-break: break-all;
+    width: 100%;
+    text-align: center;
+}
+.coupon-preview-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 5px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.coupon-preview-dates {
+    font-size: 0.78rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+.coupon-preview-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 3. Magic Code Generator Button Styling */
+.btn-generate {
+    background: linear-gradient(135deg, #1e9ff2 0%, #1e52f2 100%);
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 4px 12px rgba(30, 159, 242, 0.2);
+}
+.btn-generate:hover {
+    box-shadow: 0 6px 15px rgba(30, 159, 242, 0.35);
+}
+
+/* 4. RTL Adjustments */
+[dir="rtl"] .coupon-main-content {
+    float: right;
+}
+[dir="rtl"] .coupon-side-content {
+    float: left;
+}
+[dir="rtl"] .coupon-divider {
+    left: auto;
+    right: 68%;
+}
+
+/* Responsive Stacking */
+@media (max-width: 768px) {
+    .coupon-ticket::before,
+    .coupon-ticket::after {
+        background-color: #f4f5fa; /* Stacks nicely on dark/gray layout background */
+    }
+    .coupon-divider {
+        border-left: none;
+        border-top: 2px dashed rgba(255, 255, 255, 0.3);
+        width: 100%;
+        height: 0;
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 15px 0;
+    }
+    .coupon-main-content,
+    .coupon-side-content {
+        width: 100% !important;
+        float: none !important;
+        text-align: center !important;
+    }
+}
