@@ -161,4 +161,21 @@ return [
     'generate_code' => 'Generate Code',
     'code_placeholder' => 'Example: SUMMER2026',
     'no_usage_limit' => 'No usage limit',
+
+    // FAQ section
+    'faqs' => 'FAQs',
+    'all_faqs' => 'All FAQs',
+    'add_faq' => 'Add FAQ',
+    'edit_faq' => 'Edit FAQ',
+    'question' => 'Question',
+    'answer' => 'Answer',
+    'faqs_management_desc' => 'Manage store FAQs including adding, editing, deleting, and changing status.',
+    'faq_created' => 'FAQ created successfully',
+    'faq_updated' => 'FAQ updated successfully',
+    'faq_deleted' => 'FAQ deleted successfully',
+    'faq_status_changed' => 'FAQ status changed successfully',
+    'question_ar' => 'Question (Arabic)',
+    'question_en' => 'Question (English)',
+    'answer_ar' => 'Answer (Arabic)',
+    'answer_en' => 'Answer (English)',
 ];

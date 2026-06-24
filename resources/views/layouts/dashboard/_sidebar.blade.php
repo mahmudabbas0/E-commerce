@@ -57,6 +57,16 @@
                     </ul>
                 </li>
             @endcan
+            @can('faqs')
+                <li class=" nav-item"><a href="#"><i class="la la-question-circle"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.faqs')}}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.faqs.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.all_faqs')}}</a>
+                        </li>
+                        <li><a class="menu-item" href="{{route('dashboard.faqs.create')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.add_faq')}}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
             @can('settings')
                 <li class=" nav-item"><a href="#"><i class="la la-gear"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.settings')}}</span></a>
                     <ul class="menu-content">

@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\Auth\Password\ResetPasswordController;
 use App\Http\Controllers\Dashboard\BrandController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CouponController;
+use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\Dashboard\WorldController;
@@ -100,6 +101,14 @@ Route::group(
             Route::resource('coupons', CouponController::class);
             Route::get('coupons-all', [CouponController::class, 'getAllCoupons'])->name('coupons.all');
             Route::get('/coupons/{id}/status', [CouponController::class, 'changeStatus'])->name('coupons.status');
+
+        });
+
+        #################### FAQ Routes #################
+        Route::group(['middleware' => 'can:faqs'], function () {
+            Route::resource('faqs', FaqController::class);
+            Route::get('faqs-all', [FaqController::class, 'getAllFaq'])->name('faq.all');
+            Route::get('/faqs/{id}/status', [FaqController::class, 'changeStatus'])->name('faq.status');
 
         });
 

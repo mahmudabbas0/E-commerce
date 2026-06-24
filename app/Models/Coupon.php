@@ -20,12 +20,12 @@ class Coupon extends Model
         'is_active',
     ];
 
-    public function getCreatedAtAttributes($value)
+    public function getCreatedAtAttribute($value)
     {
         return date('Y-m-d H:i:s', strtotime($value));
     }
 
-    public function getUpdatedAtAttributes($value)
+    public function getUpdatedAtAttribute($value)
     {
         return date('Y-m-d H:i:s', strtotime($value));
     }
