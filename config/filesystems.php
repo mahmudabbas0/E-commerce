@@ -62,6 +62,14 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'settings' => [
+            'driver' => 'local',
+            'root' => public_path('/uploads/settings'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/uploads/settings',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
          'users' => [
                 'driver' => 'local',
                 'root' => public_path('/uploads/users'),

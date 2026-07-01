@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CouponController;
 use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\RoleController;
+use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\Dashboard\WorldController;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,8 @@ Route::group(
 
         #################### World Routes #################
         Route::group(['middleware' => 'can:settings'], function () {
+            Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+            Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
             Route::get('/countries', [WorldController::class, 'getAllCountries'])->name('countries');
             Route::get('/countries/{id}/status', [WorldController::class, 'changeStatus'])->name('countries.status');
             Route::get('/governorates/{id}/status', [WorldController::class, 'changeGovernorateStatus'])->name('governorates.status');
@@ -108,7 +111,6 @@ Route::group(
         Route::group(['middleware' => 'can:faqs'], function () {
             Route::resource('faqs', FaqController::class);
             Route::get('faqs-all', [FaqController::class, 'getAllFaq'])->name('faq.all');
-            Route::get('/faqs/{id}/status', [FaqController::class, 'changeStatus'])->name('faq.status');
 
         });
 

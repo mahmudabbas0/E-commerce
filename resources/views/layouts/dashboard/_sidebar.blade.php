@@ -70,6 +70,8 @@
             @can('settings')
                 <li class=" nav-item"><a href="#"><i class="la la-gear"></i><span class="menu-title" data-i18n="nav.templates.main">{{__('dashboard.settings')}}</span></a>
                     <ul class="menu-content">
+                        <li><a class="menu-item" href="{{route('dashboard.settings.index')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.site_settings')}}</a>
+                        </li>
                         <li><a class="menu-item" href="{{route('dashboard.countries')}}" data-i18n="nav.templates.vert.main">{{__('dashboard.countries')}}</a>
                         </li>
                     </ul>
